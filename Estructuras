@@ -1,0 +1,44 @@
+Estructura: 
+Colección de una o mas variables, de tipos posiblemente diferentes agrupados
+bajo un solo nombre.
+Perimite que a un grupo de variables relacionadas se les trate como una unidad 
+
+Conceptos básicos: 
+struct point{  //---> point seria el rotulo o nombre de la estructura
+  int x;        //-->Miembro de la estructura principal
+  int y;        //-->Miembor de la estructura principal
+};
+posibilidades de uso: 
+*** crear la estructura y NO enlistar variables *** 
+En este caso no reservará espacio de almacenamiento sino simplelemte 
+describe la forma de la estructura
+struct point{  //---> point seria el rotulo o nombre de la estructura
+  int x;        //-->Miembro de la estructura principal
+  int y;        //-->Miembor de la estructura principal
+};
+
+Luego se enlistarán dentro de main: 
+struct point point1;
+pueden inicializarse de inmediato 
+struct point pointmax={320 , 200};
+*** crear la estructura y enlistar variables ***
+Reserva los espacios para las variables.
+struct point{  //---> point seria el rotulo o nombre de la estructura
+  int x;        //-->Miembro de la estructura principal
+  int y;        //-->Miembor de la estructura principal
+}point1,point2;
+
+---------------------------------------------------------------
+      Hacer referencia a un miebro de la estructura
+---------------------------------------------------------------
+
+nombres-estructura.miembro
+ejemplo: 
+point1.x o point1.y
+
+-----------------------------------------------------------
+                ESTRUCTURA Y FUNCIONES
+-----------------------------------------------------------
+
+
+
