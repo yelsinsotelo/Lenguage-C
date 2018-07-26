@@ -1,0 +1,11 @@
+Cuando esta incluido como fichero el compilador pega el código del header en el codigo que se encuentra compilando, 
+pero si la funcion o variable a usar no se encuentra definida en un header sino esta en otro archivo.c el compilador
+no reconocera dicha función o variable, para ello se realiza un segundo proceso que es el proceso de enlazamiento
+
+********************************* Explicación gráfica **************************************
+archivos.c      COMPILACIÓN      FICHEROS OBJETO
+  main.c    ----->gcc -c ---->      main.o
+                                            gcc -o  main.exe 
+  otro.c    ----->gcc -c ---->      otro.o   ^
+                                             *
+                                    libc.o---*
