@@ -1,0 +1,2 @@
+extern : es el comando que indica al compilador que la variable definida se encuentra en otro archivo.
+Este comando no es traducida por el compilador sino por el enlazador.
