@@ -1,0 +1,3 @@
+pilares: 
+Un programa puede recidir en uno o mas archivos fuente, los cuales se compilan por
+separado y luego se cargan junto a las lubrerias compiladas.
