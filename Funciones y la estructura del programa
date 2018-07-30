@@ -1,3 +1,92 @@
 pilares: 
 Un programa puede recidir en uno o mas archivos fuente, los cuales se compilan por
 separado y luego se cargan junto a las lubrerias compiladas.
+
+Conceptos básicos de funciones: 
+podemos tener funcions que devuelven valores o funciones que solo ejecutan una
+acción.
+
+funciones que retornan valores no enteros: 
+double NOMBREDELAFUNCION () {  // SI NO TIENE ARG entonces se debe poner void 
+                                  como forma correcta de sintaxis
+                                  :)
+
+}
+
+Variables externas: 
+objetos externos >>>> variables o funciones
+las variables externas se definen fuera de cualquier funcion y por tanto estan
+disponibles para muchas funciones.
+Las funciones en si misma son siempre externas.
+C no permite definir funciones dentro de otra funciones
+ligado externo: propiedad de las variables y funciones que permite referenciarlas
+con el mimso nombre incluso en funciones compiladas separadamente.
+
+La variables externas son accesibles globalmente
+-permiten comunicar datos entre funciones
+-cualquier funcion puede tener acceso llamandola por su nombre
+- si se desea compartir infomración las variables externas son mas eficientes
+que el uso de extensos argumentos para cada función.
+-utiles debido a su mayor alcance y tiempo de vida.
+- retienen su valor de la invocaciones de una función a la siguiente
+
+Variables internas: 
+todas las variabels automaticamente son internas cuando se definen dentro de una funcion
+existen cuando se entra a la funcion y desaparecen cuando se abandona
+
+REGLAS DE ALCANZE: 
+las funciones y variables externas que constituyen un programa en c, no ncesitan ser compiladas a la vez 
+el texto fuente se puee tener en varios archivos y se puede cargar rutinas previamente compiladas
+de bibliotecas.
+El alcance de un nombre es la parte del programa dentro del cual se puede usar el nombre
+Variable automática: se declara al principio de una función. El alacanze es la funciion 
+en la que fue declarada.
+con las funciones ya es conocido su comportamiento . Mientras que para que se puedea
+emplear variables externas es necesario indicar esta caracteristica con la palabra 
+clave extern 
+EJEMPLO: 
+extern int valor
+modo de empleo:
+
+int sp ;
+double val[N];
+definen las variables externas sp y val, reservan
+un espacio para almacenamiento y también sirven como declaración para
+el resto de ese archivo fuente.
+
+ARCHIVO 1
+extern int sp; // es declarada 
+extern double val[]
+declaran para el resto del archivo que sp es un int y que val es un arreglo double
+(cuyo tamaño se determina en algún otro lugar), pero no crean las variables
+ni les reservan espacio
+
+
+
+ARCHIVO 2
+int sp=0
+los parametros de función son variables locales.
+variables o función externa: abarcan desde el punto en que se declaran hasta el fin de
+archivo que se está compilando.
+¿Cómo se escriben las declaraciones de modo que las variables sean declaradas
+adecuadamente durante la compilación?
+ 
+ 
+ ¿Cómo se arreglan las declaraciones de modo que todas las piezas se conecten
+adecuadamente cuando se carga el programa?
+
+¿Cómo se organizan las declaraciones de modo que sólo haya una copia?
+
+
+¿Cómo se inicializan las variables externas?
+
+
+------------------------------------------------------------------------------
+|                           Archivos de encabezamiento                       |
+------------------------------------------------------------------------------
+se utiliza para centralizar las definiciones y declaraciones compartidas
+entre archivos
+Para un programa grande se necesitan varios archivos header y mejor organización
+
+
+
