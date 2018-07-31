@@ -45,11 +45,14 @@ con las funciones ya es conocido su comportamiento . Mientras que para que se pu
 emplear variables externas es necesario indicar esta caracteristica con la palabra 
 clave extern 
 EJEMPLO: 
-extern int valor
+DECLARAR: //PROTOTIPO
+extern int sp;
+extern double val[];
 modo de empleo:
 
+DEFINIR
 int sp ;
-double val[N];
+double val[N]; // UNICA POSIBILIDAD
 definen las variables externas sp y val, reservan
 un espacio para almacenamiento y también sirven como declaración para
 el resto de ese archivo fuente.
@@ -84,9 +87,60 @@ adecuadamente cuando se carga el programa?
 ------------------------------------------------------------------------------
 |                           Archivos de encabezamiento                       |
 ------------------------------------------------------------------------------
-se utiliza para centralizar las definiciones y declaraciones compartidas
-entre archivos
-Para un programa grande se necesitan varios archivos header y mejor organización
+se utiliza para centralizar las definiciones y declaraciones compartidas entre archivos
+Para un programa grande se necesitan varios archivos header y mejor organización.
 
 
+------------------------------------------------------------------------------
+|                                  VARIABLES ESTÁTICAS                       |
+------------------------------------------------------------------------------
 
+La declaración static limita el alcance de una funcion o variable externa unicamente al resto del archivo fuente en la que fue 
+declarada.
+
+static se aplica tambien a las funciones, de modo su nombre es invisible fuera del archivo en el que está declarada
+
+static se aplica tambien a variables internas, de modo que las variables internaas static son locales a una función igual que una
+variable automática con la difrencia de que estas static internas matienen su existencia. Eso significa que las variables 
+internas static proporcinan almacenamiento privado y permanente dnetro de una función.
+
+
+------------------------------------------------------------------------------
+|                               VARIABLES TIPO REGISTRO                      |
+------------------------------------------------------------------------------
+
+SE DECLARA DE LA FORMA :
+register int std;
+
+se emplea para indicar que esa variables se empleara exhaustivamente y que por tanto es mejor almacenar en un registro en vez 
+de la pila de memoria, los compiladores tiene la libertad de ignorarlo, Esta solo se aplica a variables automáticas y a los 
+parametros formales de una función.
+NO ES POSIBLE TOMAR LA DIRECCION DE UNA VARIABLE TIPO REGISTRO, no todos los tipos de datos pueden almacenarse
+las restricciones depende del tipo de maquina que se tenga
+
+
+------------------------------------------------------------------------------
+|                                  Estructura de bloques                     |
+------------------------------------------------------------------------------
+Se dice que es un lenguaje estructurado ya que las funciones no se pueden definir dentro de otras funciones
+
+------------------------------------------------------------------------------
+|                                  Inicialización                            |
+------------------------------------------------------------------------------
+
+En ausencia de inicialización explicita, se garantiza que las variables externas y estáticas se inicializaran en 0;
+las variables automatica y tipo registro tiene valor iniciales indefinidos(es decir basura).
+
+Las variables escalares se pueden inicializar cuando se definen, siguiendo al nombre con un signo igual.
+
+Para las variables externas y estáticas el inicializador debe se una expresión constante.
+la inicializacion se realiza una vez, conceptualmente antes de que el programa inicie su ejecución.
+
+Para variables automáticas y tipo registro, el inicializador no se limita a una constante; puede ser cualquier expresión
+que contenga valores previamente definidos, incluso llamadas a funciones.
+
+
+------------------------------------------------------------------------------
+|                                 Recursividad                               |
+------------------------------------------------------------------------------
+una función Puede llamarse a sí misma ya sea directa o indirectamente.
