@@ -144,3 +144,28 @@ que contenga valores previamente definidos, incluso llamadas a funciones.
 |                                 Recursividad                               |
 ------------------------------------------------------------------------------
 una función Puede llamarse a sí misma ya sea directa o indirectamente.
+
+
+------------------------------------------------------------------------------
+|                          Preprocesador                                     |
+------------------------------------------------------------------------------
+
+1. INCLUSIÓN DE ARCHIVOS:
+   #include "archivo" ---> inicia la busqueda del archivo en la carpeta donde se encuentra
+   el programa fuente
+   #include <archivo> --> la busque sigue la ruta predefinida
+   
+   los archivos pueden incluso llevar otros #include dentro de ellos
+
+2. 4.11.2 Substitución de macros
+
+#define   Nombre   Texto de remplazo
+la validez va dese el punto de definición hasta el final del archivo
+la sustitución no se produce en lineas delimintadas por comillas
+ni en palabras que contengan la definición com parte de ellas 
+ejemplo: 
+#define porsiempre for(;;) // este es un ciclo infinito
+TAMBIEN ES POSIBLE DEFINIR MACRO CON ARGUMENTOS
+#define max(A,B) ((A)>(B) ? (A):(B))
+
+
