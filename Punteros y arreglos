@@ -1,0 +1,53 @@
+Puntero: es una variable que contine de dirección de una variable.
+-Pueden se los unicos que nos permiten realizar una operación en algunos casos
+
+----------------------------------------------------------------------------
+                      Apuntadores y direcciones 
+----------------------------------------------------------------------------
+Modelo de memoria simplificado:
+                    |>>>>>>>>>>>----------->>>>>>>V
+-------------------------------------------------------------------------
+|    |    |   |   | P |   |   |   |...  |   |   | c |   |   |   |   |   |
+-------------------------------------------------------------------------
+SE DICE QUE P APUNTA A c
+cada espacio tiene una direccion definida. estan direccionadas consecutivament.
+pueden manipularse induvidualmente o en grupo contiguo , 
+el operador unario & , da la direccion de un objeto 
+p=&c;
+& solo se aplica a objetos que estan en la memoria: variables y elementos de arreglo.
+No se aplica a valores constantes o variables tipo registro
+
+* OPERADOR INDIRECCION O DESREFENCIA, cuando se aplica a un apuntador, da accesso al objeto al que señala 
+int x=1,y=2,z[10] 
+int *ip --- es un apuntador a un int
+ip=&x ----> almacena la direccion de x.
+y=*ip ----> y almacena el contenido de x.
+
+Existe un apuntador void, pero este no puede desreferenciarse-
+
+----------------------------------------------------------------------------
+                      Apuntadores y argumentos de funciones 
+----------------------------------------------------------------------------
+
+Los punteros pueden emplearse como argumento de las funciones, pero a diferencia de los argumentos ordinarios , estos si permiten
+realizar una lectura y cambios a la variable original, mientras que en los otros caso solo lo hacen a travez de copias de la
+variable. 
+
+----------------------------------------------------------------------------
+                Apuntadores y arreglos
+--------------------------------------------------------------------------
+Veamos el siguiente arreglo : 
+
+a: |   |   |   |   |   |   |   |   |   |     |     |    |  
+     1   2   3   4   5   6   7   8   9   10    11    12
+a[i] ---> se refiere al i-esimo elemento.
+mientras que : 
+int *pa; sera un puntero
+asignamos: 
+pa=&a[0];
+el puntro pa contiende la dirección de a[0].
+ahora si x=*pa, cargamso en x el contenido de &a[0]
+estos elementos estan ordenados de manera consecutiva de modo que : 
+*(pa+1)----> es un puntero que apunta a a[1].
+*(pa+i)----> es un puntero que apunta a a[i].
+
