@@ -167,5 +167,18 @@ ejemplo:
 #define porsiempre for(;;) // este es un ciclo infinito
 TAMBIEN ES POSIBLE DEFINIR MACRO CON ARGUMENTOS
 #define max(A,B) ((A)>(B) ? (A):(B))
+de preferencia no incluir operadores incrementales.
+tener cuidad con el uso de los parentesis que se preserva en orden de evaluación
+ejemplo
+#define cuadrado(x) x*x  ---- > esto es incorrecto  debe estar presentes los parentesis
+#define cuadrado(x) (x)*(x)----> esta es la forma correcta de emplear el define
+
+LOS NOMBRES SE PUEDE HACER INDEFINIDOS #undef, para asegurar que la rutina es una funcióin
+y no una macro.
+
+#undef getchar()
+
+
+
 
 
